@@ -125,7 +125,6 @@ class Rectangle:                                        # Class Rectangle
                 line = Line(start_point=start_point, end_point=end_point)
                 lines.append(line)
 
-            # Verificar si las líneas forman un rectángulo (nueva forma)
             dot_products = [
                 (lines[0].end_point.x - lines[0].start_point.x) * (lines[1].end_point.x - lines[1].start_point.x) +
                 (lines[0].end_point.y - lines[0].start_point.y) * (lines[1].end_point.y - lines[1].start_point.y),
@@ -141,7 +140,6 @@ class Rectangle:                                        # Class Rectangle
             ]
 
             if all(dot_product == 0 for dot_product in dot_products):
-                # Si todos los productos punto son cero, las líneas son ortogonales
                 self.left_corner = Point(
                     x=min(min(line.start_point.x, line.end_point.x) for line in lines),
                     y=min(min(line.start_point.y, line.end_point.y) for line in lines)
