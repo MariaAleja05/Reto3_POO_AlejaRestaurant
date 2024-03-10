@@ -13,7 +13,49 @@
 **2.** Diagrama de las clases del restaurante para crear el codigo:
 
 ```mermaid
+classDiagram
+    MenuItem <|-- Appetizer
+    MenuItem <|-- MainCourse
+    MenuItem <|-- SideDish
+    MenuItem <|-- Dessert
+    MenuItem <|-- Beverage
+    MenuItem : +String name
+    MenuItem : +Float price
 
+    Order --* MenuItem
+    Order : +List items
+    Order : +List pricdes
+    Order : +show_menu()
+    Order : +order_items()
+    Order : +calculate_total_bill()
+    Order : +discounts()
+    Order : +print_bill()
+
+    class Appetizer{
+      +String name
+      +Float price
+      +item_selected()
+    }
+    class MainCourse{
+      +String name
+      +Float price
+      +item_selected()
+    }
+    class SideDish{
+      +String name
+      +Float price
+      +item_selected()
+    }
+    class Dessert{
+      +String name
+      +Float price
+      +item_selected()
+    }
+    class Beverage{
+      +String name
+      +Float price
+      +item_selected()
+    }
 ```
 
 **3.** Codigo Restaurante
