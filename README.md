@@ -244,7 +244,7 @@ classDiagram
 
     Order --* MenuItem
     Order : +List items
-    Order : +List pricdes
+    Order : +List prices
     Order : +show_menu()
     Order : +order_items()
     Order : +calculate_total_bill()
